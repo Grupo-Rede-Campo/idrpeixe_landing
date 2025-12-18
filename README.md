@@ -5,6 +5,7 @@ Landing page moderna e responsiva para o aplicativo IDR Peixe, desenvolvida em F
 ## 🚀 Recursos Implementados
 
 ### ✨ Design & UX
+
 - **Google Fonts (Poppins)** - Tipografia profissional e moderna
 - **Animações suaves** - FadeIn e SlideUp usando `animate_do`
 - **Hover effects** - Cards interativos com efeitos de elevação
@@ -12,6 +13,7 @@ Landing page moderna e responsiva para o aplicativo IDR Peixe, desenvolvida em F
 - **Gradiente moderno** - Hero section com cores vibrantes
 
 ### 📱 Seções da Landing Page
+
 1. **Hero Section** - Apresentação principal com CTA de download
 2. **Stats Section** - Estatísticas impressionantes (downloads, usuários, etc.)
 3. **Screenshots Carousel** - Carrossel automático de prints do app
@@ -23,6 +25,7 @@ Landing page moderna e responsiva para o aplicativo IDR Peixe, desenvolvida em F
 9. **Footer** - Rodapé com copyright
 
 ### 🎨 Melhorias de UI/UX
+
 - **CTAs funcionais** - Botão de download com `url_launcher`
 - **Cards com hover** - Efeitos visuais ao passar o mouse
 - **Animações escalonadas** - Delays diferentes para cada card
@@ -30,6 +33,7 @@ Landing page moderna e responsiva para o aplicativo IDR Peixe, desenvolvida em F
 - **Espaçamento otimizado** - Layout limpo e organizado
 
 ### 🔧 SEO & Performance
+
 - **Meta tags otimizadas** - Título, descrição e keywords
 - **Open Graph tags** - Compartilhamento otimizado em redes sociais
 - **Twitter Cards** - Preview adequado no Twitter
@@ -50,16 +54,19 @@ dependencies:
 ## 🛠️ Como usar
 
 1. **Instalar dependências**:
+
    ```bash
    flutter pub get
    ```
 
 2. **Rodar em modo web**:
+
    ```bash
    flutter run -d chrome
    ```
 
 3. **Build para produção**:
+
    ```bash
    flutter build web
    ```
@@ -67,18 +74,24 @@ dependencies:
 ## ⚙️ Configurações Importantes
 
 ### Atualizar link do APK
+
 No arquivo `lib/screens/home/home_screen.dart`, linha ~134:
+
 ```dart
 final Uri url = Uri.parse('https://seu-link-do-apk.com/idr_peixe.apk');
 ```
 
 ### Personalizar estatísticas
+
 No arquivo `lib/screens/home/home_screen.dart`, classe `StatsSection`:
+
 - Altere os números (500+, 200+, etc.)
 - Modifique os labels conforme necessário
 
 ### Adicionar/Editar depoimentos
+
 Na classe `TestimonialsSection`, adicione novos `TestimonialCard`:
+
 ```dart
 TestimonialCard(
   name: "Nome do Usuário",
@@ -89,7 +102,9 @@ TestimonialCard(
 ```
 
 ### Modificar FAQ
+
 Na classe `FAQSection`, adicione novos `FAQItem`:
+
 ```dart
 FAQItem(
   question: "Sua pergunta?",
@@ -100,18 +115,10 @@ FAQItem(
 ## 📱 Responsividade
 
 A landing page adapta-se automaticamente a:
+
 - **Mobile** (< 600px) - Layout em coluna única
 - **Tablet** (600px - 900px) - Layout em 2 colunas
 - **Desktop** (> 900px) - Layout completo em 3 colunas
-
-## 🎯 Próximas Melhorias Sugeridas
-
-- [ ] Adicionar analytics (Google Analytics)
-- [ ] Integrar formulário de contato
-- [ ] Adicionar vídeo demonstrativo
-- [ ] Implementar tema escuro
-- [ ] Adicionar mais idiomas (i18n)
-- [ ] Integrar com backend para depoimentos dinâmicos
 
 ## 📄 Licença
 
