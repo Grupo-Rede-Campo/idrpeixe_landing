@@ -10,9 +10,8 @@ class PartnersSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isSmallerThanSmallTablet = context.isSmallerThanSmallTablet;
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      color: Colors.grey.shade50,
       child: MaxWidthContainer(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -27,10 +26,7 @@ class PartnersSection extends StatelessWidget {
                   children: [
                     const Text(
                       "Realização",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 16),
                     Wrap(
@@ -57,6 +53,7 @@ class PartnersSection extends StatelessWidget {
                       "Apoio e Colaboração",
                       style: TextStyle(
                         fontSize: 24,
+                        fontFamily: 'Poppins',
                         color: Colors.grey,
                         fontWeight: FontWeight.w500,
                       ),

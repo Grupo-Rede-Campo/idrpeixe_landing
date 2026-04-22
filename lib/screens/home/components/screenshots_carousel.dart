@@ -58,8 +58,8 @@ class _ScreenshotsCarouselState extends State<ScreenshotsCarousel> {
           const AnimateOnScroll(
             uniqueKey: 'screenshots-title',
             child: Text(
-              "Capturas de Tela",
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              "Conheça nossa ferramenta",
+              style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 20),

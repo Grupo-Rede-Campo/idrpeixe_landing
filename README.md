@@ -122,4 +122,4 @@ A landing page adapta-se automaticamente a:
 
 ## 📄 Licença
 
-© 2025 - IDR Peixe | Todos os direitos reservados
+© 2026 - IDR Peixe | Todos os direitos reservados

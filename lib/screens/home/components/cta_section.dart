@@ -14,9 +14,9 @@ class CTASection extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.blue.shade600, Colors.blue.shade800],
+          colors: [Color(0xFF0A7FCB), Color(0xFF0A9A6B)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -43,7 +43,8 @@ class CTASection extends StatelessWidget {
               Text(
                 "Baixe o IDR Peixe",
                 style: TextStyle(
-                  fontSize: 36,
+                  fontSize: 34,
+                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -107,6 +108,7 @@ class CTASection extends StatelessWidget {
                 "Veja como instalar",
                 style: TextStyle(
                   fontSize: 24,
+                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
@@ -229,23 +231,28 @@ class _VideoPlayer extends StatefulWidget {
 }
 
 class _VideoPlayerState extends State<_VideoPlayer> {
-  late final YoutubePlayerController _controller;
+  static const bool _isTutorialVideoAvailable = false;
+  static const String _tutorialVideoId = 'dQw4w9WgXcQ';
+
+  YoutubePlayerController? _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = YoutubePlayerController.fromVideoId(
-      videoId: 'dQw4w9WgXcQ', // Substitua pelo ID do seu vídeo
-      autoPlay: false,
-      params: const YoutubePlayerParams(
-        showFullscreenButton: true,
-      ),
-    );
+    if (_isTutorialVideoAvailable) {
+      _controller = YoutubePlayerController.fromVideoId(
+        videoId: _tutorialVideoId,
+        autoPlay: false,
+        params: const YoutubePlayerParams(
+          showFullscreenButton: true,
+        ),
+      );
+    }
   }
 
   @override
   void dispose() {
-    _controller.close();
+    _controller?.close();
     super.dispose();
   }
 
@@ -265,9 +272,46 @@ class _VideoPlayerState extends State<_VideoPlayer> {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        child: YoutubePlayer(
-          controller: _controller,
+        child: AspectRatio(
           aspectRatio: 16 / 9,
+          child: _isTutorialVideoAvailable && _controller != null
+              ? YoutubePlayer(
+                  controller: _controller!,
+                  aspectRatio: 16 / 9,
+                )
+              : Container(
+                  color: const Color(0xFF0F172A),
+                  child: const Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.ondemand_video_rounded,
+                          color: Colors.white,
+                          size: 50,
+                        ),
+                        SizedBox(height: 12),
+                        Text(
+                          'Em breve',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          'Tutorial em video sera disponibilizado em breve.',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
         ),
       ),
     );

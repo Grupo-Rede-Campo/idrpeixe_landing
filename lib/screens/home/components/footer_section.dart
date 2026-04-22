@@ -30,6 +30,7 @@ class FooterSection extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
+                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -57,6 +58,7 @@ class FooterSection extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
+                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -87,7 +89,7 @@ class FooterSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "© 2025 - IDR Peixe",
+                    "© 2026 - IDR Peixe",
                     style: TextStyle(color: Colors.white70, fontSize: 14),
                   ),
                   SizedBox(height: 4),

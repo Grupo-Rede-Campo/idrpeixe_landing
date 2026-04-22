@@ -8,66 +8,63 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: MaxWidthContainer(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: context.isSmallerThanSmallTablet ? 24 : 80,
-          ),
-          child: const Column(
-            children: [
-              AnimateOnScroll(
-                uniqueKey: 'about-title',
-                child: Text(
-                  "Sobre o IDR Peixe",
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                ),
+    return MaxWidthContainer(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: context.isSmallerThanSmallTablet ? 24 : 80,
+        ),
+        child: const Column(
+          children: [
+            AnimateOnScroll(
+              uniqueKey: 'about-title',
+              child: Text(
+                "Sobre o IDR Peixe",
+                style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 30),
-              AnimateOnScroll(
-                uniqueKey: 'about-text',
-                delay: Duration(milliseconds: 100),
-                child: Text(
-                  "O IDR Peixe é um aplicativo criado para facilitar o registro e o acompanhamento da produção aquícola, "
-                  "além de aproximar produtores e compradores.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, height: 1.6),
-                ),
+            ),
+            SizedBox(height: 30),
+            AnimateOnScroll(
+              uniqueKey: 'about-text',
+              delay: Duration(milliseconds: 100),
+              child: Text(
+                "O IDR Peixe é um aplicativo criado para facilitar o registro e o acompanhamento da produção aquícola, "
+                "além de aproximar produtores e compradores.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, height: 1.6),
               ),
+            ),
 
-              SizedBox(height: 50),
-
-              // GRID DE IMAGENS DE PEIXES
-              AnimateOnScroll(
-                uniqueKey: 'about-images',
-                delay: Duration(milliseconds: 200),
-                child: Wrap(
-                  alignment: WrapAlignment.center, // Alinhamento centralizado
-                  spacing: 20, // Espaçamento horizontal
-                  runSpacing: 20, // Espaçamento vertical
-                  children: [
-                    _FishImageCard(
-                      imagePath: 'assets/images/fish/tambaqui-pacu-hibridos.JPG',
-                      title: 'Tambaqui',
-                    ),
-                    _FishImageCard(
-                      imagePath: 'assets/images/fish/tilapia.jpg',
-                      title: 'Tilápia',
-                    ),
-                    _FishImageCard(
-                      imagePath: 'assets/images/fish/pintado.jpeg',
-                      title: 'Pintado',
-                    ),
-                    _FishImageCard(
-                      imagePath: 'assets/images/fish/carpa.jpeg',
-                      title: 'Carpa',
-                    ),
-                  ],
-                ),
+            /* SizedBox(height: 50),
+    
+            // GRID DE IMAGENS DE PEIXES
+             AnimateOnScroll(
+              uniqueKey: 'about-images',
+              delay: Duration(milliseconds: 200),
+              child: Wrap(
+                alignment: WrapAlignment.center, // Alinhamento centralizado
+                spacing: 20, // Espaçamento horizontal
+                runSpacing: 20, // Espaçamento vertical
+                children: [
+                  _FishImageCard(
+                    imagePath: 'assets/images/fish/tambaqui-pacu-hibridos.JPG',
+                    title: 'Tambaqui',
+                  ),
+                  _FishImageCard(
+                    imagePath: 'assets/images/fish/tilapia.jpg',
+                    title: 'Tilápia',
+                  ),
+                  _FishImageCard(
+                    imagePath: 'assets/images/fish/pintado.jpeg',
+                    title: 'Pintado',
+                  ),
+                  _FishImageCard(
+                    imagePath: 'assets/images/fish/carpa.jpeg',
+                    title: 'Carpa',
+                  ),
+                ],
               ),
-            ],
-          ),
+            ), */
+          ],
         ),
       ),
     );

@@ -10,9 +10,8 @@ class StatsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = context.screenWidth;
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      color: Colors.grey.shade50,
       child: MaxWidthContainer(
         child: AnimateOnScroll(
           uniqueKey: 'stats-section',

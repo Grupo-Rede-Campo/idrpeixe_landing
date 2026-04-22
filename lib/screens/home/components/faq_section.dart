@@ -17,7 +17,7 @@ class FAQSection extends StatelessWidget {
             uniqueKey: 'faq-title',
             child: Text(
               "Perguntas Frequentes",
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 40),

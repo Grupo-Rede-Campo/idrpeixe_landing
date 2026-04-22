@@ -9,58 +9,60 @@ class TestimonialsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = context.screenWidth;
-
     return MaxWidthContainer(
-      child: Column(
-        children: [
-          const AnimateOnScroll(
-            uniqueKey: 'testimonials-title',
-            child: Text(
-              "O que nossos usuários dizem",
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: context.isSmallerThanSmallTablet ? 24 : 80,
+        ),
+        child: const Column(
+          children: [
+            AnimateOnScroll(
+              uniqueKey: 'testimonials-title',
+              child: Text(
+                "O que nossos usuários dizem",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          const SizedBox(height: 40),
-          Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth < 600 ? 20 : 80),
-              child: const Wrap(
-                alignment: WrapAlignment.center, // Alinhamento centralizado
-                runAlignment: WrapAlignment.center, // Alinhamento centralizado
-                spacing: 20, // Espaçamento horizontal
-                runSpacing: 20, // Espaçamento vertical
-                children: [
-                  TestimonialCard(
-                    name: "Jõao da Silva",
-                    comment: "O IDR Peixe facilitou a forma como gerencio minha produção. Economizo horas todos os dias!",
-                    rating: 5,
-                    delay: 100,
-                    avatarUrl: '',
-                  ),
-                  TestimonialCard(
-                    name: "Maria Oliveira",
-                    comment: "Interface intuitiva e recursos completos. Recomendo para todos da área!",
-                    rating: 4,
-                    delay: 200,
-                    avatarUrl: '',
-                  ),
-                  TestimonialCard(
-                    name: "Carlos Pereira",
-                    comment: "Muito bom! Facilita muito o controle e acompanhamento dos lotes.",
-                    rating: 4,
-                    delay: 300,
-                    avatarUrl: '',
-                  ),
-                  TestimonialCard(
-                    name: "Ana Souza",
-                    comment: "Ótimo aplicativo! Ajudou-me a organizar melhor minha produção aquícola.",
-                    rating: 5,
-                    delay: 300,
-                    avatarUrl: '',
-                  ),
-                ],
-              )),
-        ],
+            SizedBox(height: 30),
+            Wrap(
+              alignment: WrapAlignment.center, // Alinhamento centralizado
+              runAlignment: WrapAlignment.center, // Alinhamento centralizado
+              spacing: 20, // Espaçamento horizontal
+              runSpacing: 20, // Espaçamento vertical
+              children: [
+                TestimonialCard(
+                  name: "Jõao da Silva",
+                  comment: "O IDR Peixe facilitou a forma como gerencio minha produção. Economizo horas todos os dias!",
+                  rating: 5,
+                  delay: 100,
+                  avatarUrl: '',
+                ),
+                TestimonialCard(
+                  name: "Maria Oliveira",
+                  comment: "Interface intuitiva e recursos completos. Recomendo para todos da área!",
+                  rating: 4,
+                  delay: 200,
+                  avatarUrl: '',
+                ),
+                TestimonialCard(
+                  name: "Carlos Pereira",
+                  comment: "Muito bom! Facilita muito o controle e acompanhamento dos lotes.",
+                  rating: 4,
+                  delay: 300,
+                  avatarUrl: '',
+                ),
+                TestimonialCard(
+                  name: "Ana Souza",
+                  comment: "Ótimo aplicativo! Ajudou-me a organizar melhor minha produção aquícola.",
+                  rating: 5,
+                  delay: 300,
+                  avatarUrl: '',
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -16,7 +16,7 @@ class HeroSection extends StatelessWidget {
       width: double.infinity,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF0184FF), Color(0xFF00C7A2)],
+          colors: [Color(0xFF0A7FCB), Color(0xFF00C7A2)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -36,6 +36,7 @@ class HeroSection extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 48,
                         color: Colors.white,
+                        fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -72,6 +73,7 @@ class HeroSection extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 58,
                             color: Colors.white,
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -106,8 +108,8 @@ class HeroSection extends StatelessWidget {
                       duration: const Duration(milliseconds: 800),
                       delay: const Duration(milliseconds: 400),
                       child: SizedBox(
-                        width: 300,
-                        height: 500,
+                        width: 330,
+                        height: 540,
                         child: Image.asset(
                           "assets/icons/app/logo_transparent.png",
                           fit: BoxFit.contain,

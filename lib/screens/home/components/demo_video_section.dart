@@ -12,9 +12,8 @@ class DemoVideoSection extends StatelessWidget {
     final screenWidth = context.screenWidth;
     final isMobile = screenWidth < 900;
 
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      color: Colors.grey.shade50,
       child: MaxWidthContainer(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -28,13 +27,10 @@ class DemoVideoSection extends StatelessWidget {
                 uniqueKey: 'demo-video-title',
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       "Veja o IDR Peixe em Ação",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: isMobile ? 28 : 36,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 16),
                     Text(
@@ -98,6 +94,7 @@ class _FeaturesList extends StatelessWidget {
             "Principais Recursos",
             style: TextStyle(
               fontSize: 24,
+              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
               color: Colors.grey.shade800,
             ),
@@ -198,13 +195,15 @@ class _VideoContainer extends StatefulWidget {
 }
 
 class _VideoContainerState extends State<_VideoContainer> {
+  static const String _demoVideoId = 'CYP9C2UY-FU';
+
   late final YoutubePlayerController _controller;
 
   @override
   void initState() {
     super.initState();
     _controller = YoutubePlayerController.fromVideoId(
-      videoId: 'CYP9C2UY-FU',
+      videoId: _demoVideoId,
       autoPlay: false,
       params: const YoutubePlayerParams(
         showFullscreenButton: true,
