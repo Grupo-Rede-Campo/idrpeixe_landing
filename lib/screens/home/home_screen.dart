@@ -19,14 +19,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
-  final GlobalKey _scrollViewKey = GlobalKey();
   final List<GlobalKey> _sectionKeys = List.generate(10, (_) => GlobalKey());
 
   static const List<Color> _backgroundPalette = [
-    Color(0xFFEAF5FF),
-    Color(0xFFE9F8F2),
-    Color(0xFFEDF7FF),
-    Color(0xFFE6F5EE),
+    Color(0xFFDCEEFF),
+    Color(0xFFD8F6E8),
+    Color(0xFFE7F3FF),
+    Color(0xFFE2F8ED),
   ];
 
   int _activeSectionIndex = 0;
@@ -54,30 +53,17 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     }
 
-    final scrollContext = _scrollViewKey.currentContext;
-    if (scrollContext == null) {
-      return;
-    }
-
-    final viewportRenderObject = scrollContext.findRenderObject();
-    if (viewportRenderObject is! RenderBox || !viewportRenderObject.hasSize) {
-      return;
-    }
-
-    final triggerOffset = _scrollController.offset + (viewportRenderObject.size.height * 0.35);
+    final triggerGlobalY = MediaQuery.sizeOf(context).height * 0.35;
     var nextSectionIndex = 0;
 
     for (var index = 0; index < _sectionKeys.length; index++) {
-      final sectionOffset = _sectionTopOffset(
-        viewport: viewportRenderObject,
-        sectionIndex: index,
-      );
+      final sectionOffset = _sectionTopGlobal(sectionIndex: index);
 
       if (sectionOffset == null) {
         continue;
       }
 
-      if (sectionOffset <= triggerOffset) {
+      if (sectionOffset <= triggerGlobalY) {
         nextSectionIndex = index;
       } else {
         break;
@@ -91,10 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  double? _sectionTopOffset({
-    required RenderBox viewport,
-    required int sectionIndex,
-  }) {
+  double? _sectionTopGlobal({required int sectionIndex}) {
     final sectionContext = _sectionKeys[sectionIndex].currentContext;
     if (sectionContext == null) {
       return null;
@@ -105,8 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return null;
     }
 
-    final topInViewport = sectionRenderObject.localToGlobal(Offset.zero, ancestor: viewport).dy;
-    return _scrollController.offset + topInViewport;
+    return sectionRenderObject.localToGlobal(Offset.zero).dy;
   }
 
   Widget _sectionAnchor({
@@ -130,13 +112,12 @@ class _HomeScreenState extends State<HomeScreen> {
         curve: Curves.easeInOut,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [startColor, endColor],
           ),
         ),
         child: SingleChildScrollView(
-          key: _scrollViewKey,
           controller: _scrollController,
           child: Column(
             children: [
