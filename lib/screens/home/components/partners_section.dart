@@ -49,12 +49,12 @@ class PartnersSection extends StatelessWidget {
                 delay: const Duration(milliseconds: 200),
                 child: Column(
                   children: [
-                    const Text(
+                    Text(
                       "Apoio e Colaboração",
                       style: TextStyle(
                         fontSize: 24,
                         fontFamily: 'Poppins',
-                        color: Colors.grey,
+                        color: Colors.grey.shade700,
                         fontWeight: FontWeight.w500,
                       ),
                     ),

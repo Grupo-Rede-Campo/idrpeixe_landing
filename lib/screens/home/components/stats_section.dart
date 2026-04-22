@@ -22,6 +22,7 @@ class StatsSection extends StatelessWidget {
             ),
             child: const Wrap(
               alignment: WrapAlignment.spaceAround, // Alinhamento espaçado
+              crossAxisAlignment: WrapCrossAlignment.end, // Alinhamento vertical inferior
               spacing: 60, // Espaçamento horizontal
               runSpacing: 40, // Espaçamento vertical
               children: [

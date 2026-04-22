@@ -63,12 +63,15 @@ class _ScreenshotsCarouselState extends State<ScreenshotsCarousel> {
             ),
           ),
           const SizedBox(height: 20),
-          const AnimateOnScroll(
+          AnimateOnScroll(
             uniqueKey: 'screenshots-subtitle',
-            delay: Duration(milliseconds: 100),
+            delay: const Duration(milliseconds: 100),
             child: Text(
               "Veja o IDR Peixe em ação",
-              style: TextStyle(fontSize: 18, color: Colors.grey),
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.grey.shade700,
+              ),
             ),
           ),
           const SizedBox(height: 40),

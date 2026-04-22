@@ -13,24 +13,24 @@ class AboutSection extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: context.isSmallerThanSmallTablet ? 24 : 80,
         ),
-        child: const Column(
+        child: Column(
           children: [
-            AnimateOnScroll(
+            const AnimateOnScroll(
               uniqueKey: 'about-title',
               child: Text(
                 "Sobre o IDR Peixe",
                 style: TextStyle(fontSize: 34, fontFamily: 'Poppins', fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             AnimateOnScroll(
               uniqueKey: 'about-text',
-              delay: Duration(milliseconds: 100),
+              delay: const Duration(milliseconds: 100),
               child: Text(
                 "O IDR Peixe é um aplicativo criado para facilitar o registro e o acompanhamento da produção aquícola, "
                 "além de aproximar produtores e compradores.",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20, height: 1.6),
+                style: TextStyle(fontSize: 20, color: Colors.grey.shade700),
               ),
             ),
 

@@ -36,10 +36,7 @@ class DemoVideoSection extends StatelessWidget {
                     Text(
                       "Conheça todas as funcionalidades do aplicativo",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: isMobile ? 16 : 18,
-                        color: Colors.grey.shade700,
-                      ),
+                      style: TextStyle(fontSize: 20, color: Colors.grey.shade700),
                     ),
                   ],
                 ),
