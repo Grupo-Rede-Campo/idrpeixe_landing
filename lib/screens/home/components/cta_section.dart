@@ -301,7 +301,7 @@ class _VideoPlayerState extends State<_VideoPlayer> {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'Tutorial em video sera disponibilizado em breve.',
+                          'O tutorial em vídeo será disponibilizado em breve.',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white70,
