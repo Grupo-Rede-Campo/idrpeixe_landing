@@ -135,7 +135,7 @@ class HeroSection extends StatelessWidget {
             icon: Icons.android,
             label: 'Android',
             onPressed: () async {
-              final Uri url = Uri.parse('https://idrpeixe.netlify.app/downloads/idr_peixe.apk');
+              final Uri url = Uri.parse('https://idrpeixelandingpage.netlify.app/downloads/idr_peixe.apk');
               if (await canLaunchUrl(url)) {
                 await launchUrl(url, mode: LaunchMode.externalApplication);
               }

@@ -84,7 +84,7 @@ class CTASection extends StatelessWidget {
                 label: 'Baixar para Android',
                 subtitle: 'APK Direto',
                 color: Colors.green,
-                onPressed: () => UrlHelpers.downloadApk('https://idrpeixe.netlify.app/downloads/idr_peixe.apk'),
+                onPressed: () => UrlHelpers.downloadApk('https://idrpeixelandingpage.netlify.app/downloads/idr_peixe.apk'),
               ),
               const _DownloadButton(
                 icon: Icons.apple,
